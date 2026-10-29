@@ -1,30 +1,51 @@
-
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Footer from './components/Footer'
+import Depoimentos from './components/Depoimentos'
+import Vagas from './components/Vaga'
+import React from 'react'
 import './App.css'
+import News from './components/News'
 
 function App() {
   
 
   return (
-  <div>
-    <header>
-        <h1>OpenBoard</h1>
-        <div className="header_actions">
-            <a href="">Entrar</a>
-            <button class="btn btn--full">Publicar Vaga - $299</button>
-        </div>
-    </header>    
-     <footer>
-        <p>OpenBoard 2026 todos os direitos reservados</p>
+    <React.Fragment>  
+    <Header />  
 
-        <nav>
-            <a href="">Entrar</a>
-            <a href="">Publicar Vaga</a>
-            <a href="">Sobre</a>
-            <a href="">Privacidade</a>
-        </nav>
+    <Hero
+    title="As melhores vagas em startup de tecnologia"
+    subtitle="Encontre oportunidades reais em empresas curadas. Sem cadastro, sem barreiras de recrutadores e candidatos que já fecharam vaga por aqui."
+    >
+    <button className="btn cta">Publicar Vaga - $299</button>
+    </Hero>
+  
 
-    </footer>
-  </div>
+<div className='conteudo'>
+    <Vagas />
+</div>
+
+
+    <Hero
+       title= "Vagas novas, toda quinta-feira"
+       subtitle= "resumo curto das melhores vagas direto no seu inbox"
+    >
+      <News />
+  </Hero >
+
+
+    <Hero
+    title="Quem já usa o OpenBoard"
+    subtitle="Depoimentos de recrutadores e candidadtos que já fecharam vaga por aqui."
+   >
+    <Depoimentos />
+   </Hero>
+
+
+    <Footer />
+
+  </React.Fragment>
   )
 }
 
