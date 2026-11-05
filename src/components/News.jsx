@@ -23,22 +23,19 @@ function News() {
         <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="form__input"
-            type="email"
-            placeholder="seu@email.com"
+            placeholder="seu@email.com" 
         />
         
         <button
          className="btn" onClick={handleSubmit}>
             Inscrever-se
         </button>
-        
-        <p style={{color: 'red'}}>{error}</p>
-        <p style={{color: 'grem'}}>{sucesso}</p>
-        
+
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {success && <p style={{ color: 'green' }}>{success}</p>}
 
       </form>
     )
 }
 
-export default News;
+export default News;                
